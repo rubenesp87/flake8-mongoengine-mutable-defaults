@@ -1,0 +1,8 @@
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Unit test
+.pytest_cache/
