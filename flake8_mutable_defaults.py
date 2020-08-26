@@ -1,7 +1,7 @@
 import ast
 
 
-__version__ = "1.2.0"
+__version__ = "0.0.1"
 
 
 mutable_types = [ast.Call]
@@ -23,21 +23,21 @@ class MutableDefaultChecker(object):
 
     def run(self):
         for node in ast.walk(self.tree):
-
-            if isinstance(node, ast.keyword):
-                if getattr(node, "arg", None) and node.arg == "default":
-                    if any(
-                        [
-                            isinstance(node.value, mutable_type)
-                            for mutable_type in mutable_types
-                        ]
-                    ):
-                        error_msg = self._error_tmpl.format(
-                            self._code, ast.Call.__name__
-                        )
-                        yield (
-                            node.arg,
-                            node.value.func.id,
-                            error_msg,
-                            type(self),
-                        )
+            if (
+                isinstance(node, ast.keyword)
+                and getattr(node, "arg", None)
+                and node.arg == "default"
+            ):
+                if any(
+                    [
+                        isinstance(node.value, mutable_type)
+                        for mutable_type in mutable_types
+                    ]
+                ):
+                    error_msg = self._error_tmpl.format(self._code, ast.Call.__name__)
+                    yield (
+                        node.arg,
+                        node.value.func.id,
+                        error_msg,
+                        type(self),
+                    )
