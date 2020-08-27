@@ -11,8 +11,9 @@ from flake8_mutable_defaults import MutableDefaultChecker
         ("def foo(): bar(default={})", 0),
         ("def foo(): bar(default=abc())", 1),
         ("def foo(): bar(abc())", 0),
+        ("def foo(): bar(document_type=cde, default=abc())", 1),
     ],
-    ids=("default var", "default dict", "default func", "default func without pos"),
+    ids=("default var", "default dict", "default func", "default func without pos", "default and document_type func"),
 )
 def test_mutable_defaults(code, error_count):
     tree = ast.parse(code)

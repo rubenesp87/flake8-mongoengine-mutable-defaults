@@ -26,7 +26,7 @@ class MutableDefaultChecker(object):
             if (
                 isinstance(node, ast.keyword)
                 and getattr(node, "arg", None)
-                and node.arg == "default"
+                and (node.arg == "default" or node.arg == "document_type")
             ):
                 if any(
                     [
