@@ -12,7 +12,7 @@ setuptools.setup(
     install_requires=["flake8"],
     entry_points={
         "flake8.extension": [
-            "PCK0 = mongoengine_mutable_defaults:MongoEngineDefaultChecker"
+            "X101 = mongoengine_mutable_defaults:MongoEngineDefaultChecker"
         ]
     },
     classifiers=["Topic :: Software Development :: Quality Assurance"],

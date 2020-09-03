@@ -18,7 +18,7 @@ class MongoEngineDefaultChecker(object):  # type: ignore
     name = "flake8-mongoengine-mutable-defaults"
     version = __version__
     _error_tmpl = "{} - mongoengine mutable default arg of type {}"
-    _code = "W504"
+    _code = "X101"
 
     def __init__(self, tree, filename):
         self.tree = tree
