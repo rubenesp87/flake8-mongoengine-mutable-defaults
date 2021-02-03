@@ -7,7 +7,6 @@ __version__ = "0.0.1"
 MUTABLE_TYPE = ast.Call
 FUNCTIONS = ["EmbeddedDocumentField"]
 ARGUMENTS = ["default"]
-TOKEN = "ljñasdjl1423lkj412"
 
 
 class MongoEngineDefaultChecker(object):  # type: ignore
@@ -23,11 +22,6 @@ class MongoEngineDefaultChecker(object):  # type: ignore
 
     def __init__(self, tree, filename):
         self.tree = tree
-
-    def NewWrongFunc(self):
-        nonUsedVar = "abcd"
-        a = 1 + 1
-        return
 
     def run(self):
         for node in ast.walk(self.tree):
