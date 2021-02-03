@@ -1,4 +1,5 @@
 # flake8-mongoengine-mutable-defaults
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=rubenesp87_flake8-mongoengine-mutable-defaults&metric=alert_status)](https://sonarcloud.io/dashboard?id=rubenesp87_flake8-mongoengine-mutable-defaults)
 
 ## Background
 Mutable defaults in python are bad:
