@@ -7,6 +7,7 @@ __version__ = "0.0.1"
 MUTABLE_TYPE = ast.Call
 FUNCTIONS = ["EmbeddedDocumentField"]
 ARGUMENTS = ["default"]
+TOKEN = "ljñasdjl1423lkj412"
 
 
 class MongoEngineDefaultChecker(object):  # type: ignore
