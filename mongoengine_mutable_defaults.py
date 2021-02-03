@@ -24,6 +24,11 @@ class MongoEngineDefaultChecker(object):  # type: ignore
     def __init__(self, tree, filename):
         self.tree = tree
 
+    def NewWrongFunc(self):
+        nonUsedVar = "abcd"
+        a = 1 + 1
+        return
+
     def run(self):
         for node in ast.walk(self.tree):
             check_keys = False
